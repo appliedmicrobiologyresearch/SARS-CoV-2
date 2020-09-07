@@ -8,5 +8,6 @@ The project space accompanies the manuscript "SARS-CoV-2 phylogeny during the ea
 ## Dependencies for part 2: phylogenetic analysis of Basel sequences in global context
   - global genomes and metadata were downloaded from GISAID (https://www.gisaid.org/)
   - we filtered all genomes (GISAID and COVGAP produced consensus sequences) prior to the final analysis to contain less than 10% Ns (ambigious characters) using this biophyton script: https://biopython.org/wiki/Sequence_Cleaner
+  - we time filter the reads using R and packages tidyr, dplyr, and readr. In theory, nextstrain offers a time filter by dd-mm-yyyy however, for some reason only mm-yyyy worked and was not sufficient for our purpose to filter by specific dates. We dropped all GISAID genomes that did not provide information to the day of sampling.
   - for installation of the nextstrain pipeline follow the instructions here https://github.com/nextstrain/ncov
   - nextstrain offers an alignment option within the pipeline, however we chose to use mafft v.7.467 (download here https://mafft.cbrc.jp/alignment/software/) and run it outside the nextstrain pipeline as this version can handle several thousands of genomes and is still very fast and accurate.
